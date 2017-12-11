@@ -1,11 +1,4 @@
 
-# coding: utf-8
-
-# # Final Project TABLE 1
-
-# In[1]:
-
-
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
@@ -20,8 +13,7 @@ import pandas as pd
 app = dash.Dash(__name__)
 server = app.server
 
-df = pd.read_csv(
-    '/Users/patygilbon/Downloads/nama_10_gdp/nama_10_gdp_1_Data.csv')
+df = pd.read_csv('/Users/patygilbon/Downloads/nama_10_gdp/nama_10_gdp_1_Data.csv')
 app.css.append_css({"external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"})
 available_indicators = df['UNIT'].unique()
 value= df['Value'].unique()
