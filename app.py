@@ -14,14 +14,14 @@ import plotly.graph_objs as go
 import pandas as pd
 
 
-# In[45]:
+# In[48]:
 
 
 app = dash.Dash(__name__)
 server = app.server
 
 df = pd.read_csv(
-    '/Users/patygilbon/Downloads/nama_10_gdp/nama_10_gdp_1_Data.csv')
+    'https://raw.githubusercontent.com/PatyGilbon/dash_app_example/master/nama_10_gdp_1_Data.csv')
 df1 = df[df['UNIT'] == 'Current prices, million euro']
 app.css.append_css({"external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"})
 available_indicators = df['UNIT'].unique()
@@ -30,7 +30,7 @@ geo=df['GEO'].unique()
 gdp = df['NA_ITEM'].unique()
 
 
-# In[ ]:
+# In[47]:
 
 
 app.layout = html.Div([
