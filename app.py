@@ -86,7 +86,7 @@ def update_graph(xaxis_column_name, yaxis_column_name,
                  xaxis_type, yaxis_type,
                  year_value):
     dff = df[df['TIME'] == year_value]
-    
+
     return {
         'data': [go.Scatter(
             x=dff[dff['UNIT'] == xaxis_column_name]['Value'],
@@ -113,8 +113,5 @@ def update_graph(xaxis_column_name, yaxis_column_name,
         )
     }
 
-if __name__ == '__main__': 
-    app.run_server(debug=False) 
-
-
-# # Final Project TABLE 2
+if __name__ == '__main__':
+    app.run_server(debug=False)
