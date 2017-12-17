@@ -3,7 +3,7 @@
 
 # # Final Project TABLE 1
 
-# In[46]:
+# In[1]:
 
 
 import dash
@@ -14,7 +14,7 @@ import plotly.graph_objs as go
 import pandas as pd
 
 
-# In[48]:
+# In[ ]:
 
 
 app = dash.Dash(__name__)
@@ -30,12 +30,12 @@ geo=df['GEO'].unique()
 gdp = df['NA_ITEM'].unique()
 
 
-# In[47]:
+# In[ ]:
 
 
 app.layout = html.Div([
     html.Div([
-
+        html.H1(children=' Eurostat, GDP and main components (output, expenditure and income)'),
         html.Div([
             dcc.Dropdown(
                 id='xaxis-column',
@@ -76,6 +76,7 @@ app.layout = html.Div([
         marks={str(year): str(year) for year in df['TIME'].unique()}
     ),
      html.Div([
+        html.H1(children='GDP'),
         html.Div([
             dcc.Dropdown( id='xaxis-column2',
                 options=[{'label': i, 'value': i} for i in gdp],
